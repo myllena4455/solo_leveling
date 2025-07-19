@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Solo Leveling: Desafio do Caçador</title>
+  <style>
+    body {
+      background: #0e0e0e;
+      color: #f2f2f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+
+    .container {
+      background: #1c1c1c;
+      border: 2px solid #00bfff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 0 15px #00bfff99;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #2b2b2b;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #00bfff;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #0088cc;
+    }
+
+    #resultado, #tentativas, #placar {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    #inicio {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #jogo {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Solo Leveling: Desafio do Caçador</h1>
+
+  <div class="container" id="inicio">
+    <label>Digite seu nome de Caçador:</label>
+    <input type="text" id="nomeJogador" placeholder="Ex: Sung Jin-Woo">
+    <button onclick="iniciarJogo()">Entrar na Dungeon</button>
+  </div>
+
+  <div class="container" id="jogo">
+    <p id="boasVindas"></p>
+    <input type="number" id="palpite" placeholder="Digite um número de 1 a 1000">
+    <button onclick="verificarPalpite()">Apostar</button>
+    <div id="resultado"></div>
+    <div id="tentativas"></div>
+    <div id="placar"></div>
+  </div>
+
+  <script>
+    let numeroAleatorio = Math.floor(Math.random() * 1000) + 1;
+    let tentativasRestantes = 10;
+    let totalJogadores = localStorage.getItem("totalJogadores") || 0;
+    let jogadorAtual = "";
+
+    function iniciarJogo() {
+      const nome = document.getElementById("nomeJogador").value.trim();
+      if (!nome) {
+        alert("Digite um nome para entrar na Dungeon!");
+        return;
+      }
+
+      jogadorAtual = nome;
+      document.getElementById("inicio").style.display = "none";
+      document.getElementById("jogo").style.display = "block";
+      document.getElementById("boasVindas").innerText = `Bem-vindo, Caçador ${jogadorAtual}. Um inimigo oculto te desafia!`;
+      atualizarPlacar();
+      atualizarTentativas();
+    }
+
+    function verificarPalpite() {
+      const palpite = parseInt(document.getElementById("palpite").value);
+      if (isNaN(palpite) || palpite < 1 || palpite > 1000) {
+        alert("Digite um número válido entre 1 e 1000!");
+        return;
+      }
+
+      tentativasRestantes--;
+
+      if (palpite === numeroAleatorio) {
+        document.getElementById("resultado").innerHTML = `<strong>Você venceu! Número correto era ${numeroAleatorio}.</strong>`;
+        encerrarJogo(true);
+      } else if (tentativasRestantes === 0) {
+        document.getElementById("resultado").innerHTML = `<strong>Você perdeu! O número era ${numeroAleatorio}.</strong>`;
+        encerrarJogo(false);
+      } else {
+        let dica = palpite < numeroAleatorio ? "maior" : "menor";
+        document.getElementById("resultado").innerText = `Errado! Tente um número ${dica}.`;
+        atualizarTentativas();
+      }
+    }
+
+    function atualizarTentativas() {
+      document.getElementById("tentativas").innerText = `Tentativas restantes: ${tentativasRestantes}`;
+    }
+
+    function atualizarPlacar() {
+      document.getElementById("placar").innerText = `Jogadores que já enfrentaram esta dungeon: ${totalJogadores}`;
+    }
+
+    function encerrarJogo(venceu) {
+      totalJogadores++;
+      localStorage.setItem("totalJogadores", totalJogadores);
+      atualizarPlacar();
+      document.getElementById("tentativas").innerText = "";
+      document.getElementById("palpite").disabled = true;
+      setTimeout(() => {
+        alert("Reiniciando a dungeon...");
+        location.reload();
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
