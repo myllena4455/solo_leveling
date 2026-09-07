@@ -1,0 +1,1889 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Solo Leveling</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const overlay = document.getElementById("overlay");
+            if (sidebar) {
+                sidebar.classList.toggle("active");
+            }
+            if (overlay) {
+                overlay.classList.toggle("active");
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdown-sistemas");
+            const arrow = document.querySelector(".arrow");
+            if (dropdown) {
+                dropdown.classList.toggle("show");
+            }
+            if (arrow) {
+                arrow.classList.toggle("rotate");
+            }
+        }
+
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".page-section");
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            const activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add("active");
+            }
+
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar && sidebar.classList.contains("active")) {
+                toggleSidebar();
+            }
+        }
+
+        function toggleAccordion(headerElement) {
+            if (!headerElement) {
+                return;
+            }
+            const card = headerElement.parentElement;
+            if (card) {
+                card.classList.toggle("open");
+            }
+        }
+
+        window.toggleSidebar = toggleSidebar;
+        window.toggleDropdown = toggleDropdown;
+        window.showSection = showSection;
+        window.toggleAccordion = toggleAccordion;
+    </script>
+</head>
+<body>
+
+    <div class="top-bar">
+        <button class="menu-toggle" type="button" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <header class="top-banner">
+            <img src="img/1000764591.jpg" alt="Solo Leveling Banner">
+        </header>
+    </div>
+
+    <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-banner">
+                <img src="img/menurpg.jpg" alt="Menu Banner">
+            </div>
+            <button class="close-btn" type="button" onclick="toggleSidebar()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul>
+        <ul>
+            <li onclick="showSection('inicio')">
+                <i class="fa-solid fa-house"></i>
+                <span>Início</span>
+            </li>
+            
+            <li class="dropdown-btn" onclick="toggleDropdown()">
+                <div class="dropdown-title">
+                    <i class="fa-solid fa-scroll"></i>
+                    <span>Sistemas</span>
+                </div>
+                <i class="fa-solid fa-chevron-down arrow"></i>
+            </li>
+            <ul class="dropdown-container" id="dropdown-sistemas">
+                <li onclick="showSection('sistema-geral')">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Geral</span>
+                </li>
+                <li onclick="showSection('sistema-xp')">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Formas de Ganhar XP</span>
+                </li>
+                <li onclick="showSection('sistema-guilda')">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Sistemas de Guilda</span>
+                </li>
+                <li onclick="showSection('sistema-importante')">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>Sistemas Importantes</span>
+                </li>
+            </ul>
+
+            <li onclick="showSection('criar-ficha')">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Como Criar Ficha</span>
+            </li>
+
+            <li onclick="showSection('loja')">
+                <i class="fa-solid fa-store"></i>
+                <span>Loja</span>
+            </li>
+
+            <li onclick="showSection('ajuda')">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>Ajuda</span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+
+        <section id="inicio" class="page-section active">
+            <div class="info-card">
+                <h1 class="rpg-title">呪 𝐁𝐞𝐦-𝐕𝐢𝐧𝐝𝐨 𝐚𝐨 𝐒𝐨𝐥𝐨 𝐋𝐞𝐯𝐞𝐥𝐢𝐧𝐠 𝐑𝐏𝐆 呪</h1>
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+                <p class="rpg-subtitle">術 ✦ 𝐎 𝐕𝐄𝐑𝐃𝐀𝐃𝐄𝐈𝐑𝐎 𝐅𝐈𝐌 𝐂𝐎𝐌𝐄𝐂̧𝐀 𝐀𝐆𝐎𝐑𝐀 術</p>
+                <p class="rpg-paragraph">廻 ✦ Prepare-se, Caçador. O mundo que você conhecia já não existe, e a paz que tanto custou a ser conquistada era apenas uma ilusão passageira. O Sistema reabriu suas portas, e uma nova era de perigos exige uma nova geração de heróis.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">鬼 ✦ 𝐏𝐑𝐎́𝐋𝐎𝐆𝐎: 𝐀 𝐒𝐎𝐌𝐁𝐑𝐀 𝐃𝐎 𝐃𝐄𝐒𝐏𝐄𝐑𝐓𝐀𝐑 鬼</h2>
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+                <p class="rpg-paragraph">術 ✦ A humanidade acreditava que a guerra havia terminado. Os Portões desapareceram, os monstros foram exterminados e os nomes dos grandes heróis foram eternizados na história. Durante anos, o mundo viveu uma paz que parecia inabalável.</p>
+                <p class="rpg-paragraph">廻 ✦ Porém, além dos limites da realidade conhecida, algo observava em silêncio. Uma presença tão antiga quanto o próprio universo despertou, trazendo consigo um poder capaz de eclipsar Monarcas, Governantes e qualquer força já registrada. Quando estranhas rupturas começaram a surgir pelo planeta, ficou claro que a maior ameaça da existência ainda não havia mostrado sua face.</p>
+                <p class="rpg-paragraph">戦 ✦ Agora, cidades inteiras desaparecem sem explicação, caçadores de elite somem ao atravessar novos Portões e criaturas jamais vistas caminhando entre os humanos. Segredos enterrados desde a criação do mundo começam a emergir, revelando que tudo o que se sabia sobre o Sistema, os Portões e os próprios caçadores era apenas uma fração da verdade.</p>
+                <p class="rpg-paragraph">鬼 ✦ Enquanto o caos se espalha e a humanidade se aproxima da extinção, uma nova geração de guerreiros é convocada para enfrentar o impossível. O destino de bilhões de vidas será decidido nesta batalha, e apenas aqueles dispostos a ultrapassar seus próprios limites terão a chance de sobreviver ao verdadeiro começo do fim.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">⚔️ ✦ 𝐆𝐔𝐈𝐀 𝐃𝐄 𝐍𝐀𝐕𝐄𝐆𝐀𝐂̧𝐀̃𝐎 ⚔️</h2>
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+                <p class="rpg-paragraph">廻 ✦ • Systems & Ficha: Regras de criação, sorteio e comandos.</p>
+                <p class="rpg-paragraph">術 ✦ • Classes & Atributos: Vertentes de combate e evolução.</p>
+                <p class="rpg-paragraph">鬼 ✦ • Dungeons & Raids: Lista de portões ativos e níveis.</p>
+                <p class="rpg-paragraph">戦 ✦ • Ajuda & Suporte: Dúvidas e contato com os ADMs.</p>
+            </div>
+
+            <div class="info-card">
+                <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+                <p class="call-text">🚪 O PORTÃO ESTÁ ABERTO. VOCÊ VAI ENCARAR?</p>
+                <div class="card-banner">
+                    <img src="img/banerolho.jpg" alt="Solo Leveling Banner">
+                </div>
+            </div>
+        </section>
+
+        <section id="sistema-geral" class="page-section">
+
+    <div class="system-card">
+        <div class="system-header">
+            <h1 class="rpg-title">呪 𝐆𝐮𝐢𝐚 𝐝𝐨𝐬 𝐒𝐢𝐬𝐭𝐞𝐦𝐚𝐬 呪</h1>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐀𝐕𝐈𝐒𝐎 𝐈𝐌𝐏𝐎𝐑𝐓𝐀𝐍𝐓𝐄 術</p>
+            <p class="rpg-paragraph">廻 ✦ Aqui você encontrará todos os nossos Sistemas em Geral para entender o funcionamento do RPG.</p>
+            <p class="rpg-paragraph">鬼 ✦ Os sistemas fundamentais, como os de Mana e XP, estão localizados na aba de Sistemas Importantes.</p>
+            <p class="rpg-paragraph">戦 ✦ Leia tudo com muita atenção e cuidado para evitar erros na hora de montar e evoluir seu personagem!</p>
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+            <p class="rpg-subtitle">術 ✦ 𝐒𝐔𝐏𝐎𝐑𝐓𝐄 𝐄 𝐃𝐔́𝐕𝐈𝐃𝐀𝐒 術</p>
+            <p class="rpg-paragraph">廻 ✦ Qualquer dúvida que surgir, marque ou chame um dos ADMs no privado.</p>
+            <p class="rpg-paragraph">鬼 ✦ A My não tem nada a ver com isso, tá? Kkkkkkkk não venham encher o saco dela!</p>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐃𝐮𝐧𝐠𝐞𝐨𝐧𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ As Dungeons são instâncias perigosas onde os caçadores devem se unir em Raids para enfrentar hordas de monstros e chefões poderosos. A dificuldade, o número de inimigos e as recompensas variam diretamente com o Rank do Portão. Prepare seus equipamentos e atente-se às regras de força de cada nível!</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐑𝐀𝐍𝐊 𝐃 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Aparece entre 2 a 5 monstros antes do Boss.</p>
+                <p class="rpg-paragraph">術 ✦ O Boss tem uma força equivalente a no mínimo 10% a mais da força média dos jogadores que entraram.</p>
+                <p class="rpg-paragraph">戦 ✦ Sua recompensa: (A definir/Padrão)</p>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐑𝐀𝐍𝐊 𝐂 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Aparece entre 4 a 7 monstros antes do Boss.</p>
+                <p class="rpg-paragraph">術 ✦ O Boss tem uma força equivalente a no mínimo 15% a mais da força média dos jogadores que entraram.</p>
+                <p class="rpg-paragraph">戦 ✦ Sua recompensa é: Podendo ter drops adicionais.</p>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐑𝐀𝐍𝐊 𝐁 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Aparece entre 6 a 9 monstros antes do Boss.</p>
+                <p class="rpg-paragraph">術 ✦ O Boss tem uma força equivalente a no mínimo 20% a mais da força média dos jogadores que entraram.</p>
+                <p class="rpg-paragraph">戦 ✦ Sua recompensa é: Podendo ter drops adicionais.</p>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐑𝐀𝐍𝐊 𝐀 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Aparece entre 8 a 12 monstros antes do Boss.</p>
+                <p class="rpg-paragraph">術 ✦ O Boss tem uma força equivalente a no mínimo 30% a mais da força média dos jogadores que entraram.</p>
+                <p class="rpg-paragraph">戦 ✦ Sua recompensa são: Podendo ter drops adicionais, podendo ter drops determinados pelo narrador.</p>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐑𝐀𝐍𝐊 𝐒 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Aparece entre 10 a 15 monstros antes do Boss.</p>
+                <p class="rpg-paragraph">術 ✦ O Boss tem uma força equivalente a no mínimo 50% a mais da força média dos jogadores que entraram.</p>
+                <p class="rpg-paragraph">戦 ✦ Sua recompensa é: Podendo ter drops adicionais, tendo drops determinados pelo narrador.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚡ ✦ 𝐂𝐀́𝐋𝐂𝐔𝐋𝐎𝐒 𝐃𝐄 𝐅𝐎𝐑𝐂̧𝐀 ⚡</h3>
+                <p class="rpg-paragraph">廻 ✦ Força média: seria, 70% dos pontos totais de todos participantes da raid.</p>
+                <p class="rpg-paragraph">術 ✦ Mobs comuns: terão como força média Metade do valor do Boss.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚: 𝐒𝐞𝐠𝐮𝐧𝐝𝐨 𝐃𝐞𝐬𝐩𝐞𝐫𝐭𝐚𝐫 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐎 𝐐𝐔𝐄 𝐄́ 𝐎 𝐒𝐄𝐆𝐔𝐍𝐃𝐎 𝐃𝐄𝐒𝐏𝐄𝐑𝐓𝐀𝐑? 術</p>
+                <p class="rpg-paragraph">廻 ✦ O Segundo Despertar ocorre somente em situações muito específicas. Ele permite que o caçador pule do Rank E direto até o Rank Nacional, caso tenha sorte!</p>
+                <p class="rpg-paragraph">鬼 ✦ Na pior das hipóteses, o Segundo Despertar mais fraco faz você pular 2 Ranks (exemplo: se você é Rank E, pula o D e o C, ficando direto no Rank B).</p>
+                <p class="rpg-paragraph">戦 ✦ Players que já estão no Rank A ou S pulam diretamente para o Rank Nacional.</p>
+                <p class="rpg-paragraph">⚡ ✦ Nota: Todos os players que pegarem nível Nacional de primeira já são considerados despertados.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚔️ ✦ 𝐌𝐎𝐃𝐎 𝐃𝐄 𝐎𝐁𝐓𝐄𝐍𝐂̧𝐀̃𝐎 ⚔️</h3>
+                <p class="rpg-paragraph">廻 ✦ 1. O caçador precisa ir em uma Raid acima do seu nível, SOZINHO, e passar por uma experiência de quase morte.</p>
+                <p class="rpg-paragraph">術 ✦ 2. A Raid será feita em uma instância própria para o despertar, funcionando como um Covil Duplo.</p>
+                <p class="rpg-paragraph">鬼 ✦ 3. Após a experiência, o player deverá fazer uma cena de no mínimo 300 palavras explicando como contornou a situação ou o motivo de ter sobrevivido.</p>
+                <p class="rpg-paragraph">戦 ✦ 4. Após o envio da cena, um dado será rolado baseado no Rank da Raid para definir se você sobrevive ao despertar ou não.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🎲 ✦ 𝐂𝐇𝐀𝐍𝐂𝐄𝐒 𝐃𝐄 𝐒𝐎𝐁𝐑𝐄𝐕𝐈𝐕𝐄̂𝐍𝐂𝐈𝐀 🎲</h3>
+                <p class="rpg-paragraph">廻 ✦ 1 Rank acima: 80% de chance — O despertar sobe apenas 1 Rank.</p>
+                <p class="rpg-paragraph">術 ✦ 2 Ranks acima: 60% de chance — O despertar sobe 2 Ranks.</p>
+                <p class="rpg-paragraph">鬼 ✦ 3 Ranks acima: 40% de chance — O despertar sobe 3 Ranks.</p>
+                <p class="rpg-paragraph">戦 ✦ 4 Ranks acima: 20% de chance — O despertar sobe 4 Ranks.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🎯 ✦ 𝐑𝐄𝐐𝐔𝐈𝐒𝐈𝐓𝐎𝐒 𝐃𝐄 𝐍𝐈́𝐕𝐄𝐋 🎯</h3>
+                <p class="rpg-paragraph">廻 ✦ Ranks E e D: Mínimo Nível 15</p>
+                <p class="rpg-paragraph">術 ✦ Ranks C e B: Mínimo Nível 25</p>
+                <p class="rpg-paragraph">鬼 ✦ Ranks A e S: Mínimo Nível 35</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐓𝐢́𝐭𝐮𝐥𝐨𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐎 𝐐𝐔𝐄 𝐒𝐀̃𝐎 𝐎𝐒 𝐓𝐈́𝐓𝐔𝐋𝐎𝐒? 術</p>
+                <p class="rpg-paragraph">廻 ✦ Em eventos especiais ou em Dungeons duplas, é possível receber um título caso seu personagem tenha destaque em alguma coisa ou se destaque por alguma coisa.</p>
+                <p class="rpg-paragraph">鬼 ✦ Os títulos são formas de reconhecimento utilizadas tanto por caçadores como por pessoas comuns, que muita das vezes se referem aos caçadores por apelidos ou por títulos.</p>
+                <p class="rpg-paragraph">戦 ✦ Cada título terá uma "capacidade" ou buff adicional para o portador. (Ex: Título de Milionário: Aumenta em 200% seu ganho monetário).</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">👑 ✦ 𝐀𝐓𝐑𝐈𝐁𝐔𝐈𝐂̧𝐀̃𝐎 𝐄 𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋𝐈𝐙𝐀𝐂̧𝐀̃𝐎 👑</h3>
+                <p class="rpg-paragraph">廻 ✦ Os títulos e os Buffs são dados por adm/narradores de evento.</p>
+                <p class="rpg-paragraph">術 ✦ A única coisa que o player pode mudar caso ganhe um título, é o próprio título (Ex: Ganhei o título de princesa da saia curta, mudo para Príncipe da calça colada).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+    </div>
+
+</section>
+
+       <section id="sistema-xp" class="page-section">
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h1 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚𝐬 𝐝𝐞 𝐅𝐨𝐫𝐦𝐚𝐬 呪</h1>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ Nesta seção, você encontrará listadas todas as Formas e Transformações disponíveis no nosso RPG.</p>
+                <p class="rpg-paragraph">鬼 ✦ Cada forma possui seus próprios requisitos, custos de ativação, buffs de status e limites de tempo.</p>
+                <p class="rpg-paragraph">戦 ✦ Leia com bastante atenção as especificações de cada uma para entender como liberar e utilizar o potencial máximo do seu caçador em combate!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐆𝐚𝐧𝐡𝐨 𝐩𝐨𝐫 𝐍𝐢́𝐯𝐞𝐥 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐏𝐎𝐍𝐓𝐎𝐒 𝐏𝐎𝐑 𝐍𝐈́𝐕𝐄𝐋 術</p>
+                <p class="rpg-paragraph">廻 ✦ A cada nível subido, o ganho de pontos irá variar pelo seu Rank:</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank E: 75 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank D: 125 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank C: 170 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank B: 250 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank A: 350 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank S: 500 pontos</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank N: 600 pontos</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚔️ ✦ 𝐀𝐔𝐌𝐄𝐍𝐓𝐎 𝐃𝐄 𝐇𝐏 𝐏𝐎𝐑 𝐍𝐈́𝐕𝐄𝐋 ⚔️</h3>
+                <p class="rpg-paragraph">廻 ✦ A cada level upado também aumenta o HP por nível dependendo da classe:</p>
+                <p class="rpg-paragraph">術 ✦ Caso você seja Lutador: 4.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">術 ✦ Caso você seja Tank: 5.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">術 ✦ Caso você seja Healer ou Mago: 3.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">術 ✦ Caso você seja Ranger ou Assassino: 3.500 * Lvl + Vitalidade * 2</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚡ ✦ 𝐒𝐋𝐎𝐓𝐒 𝐃𝐄 𝐇𝐀𝐁𝐈𝐋𝐈𝐃𝐀𝐃𝐄𝐒 ⚡</h3>
+                <p class="rpg-paragraph">戦 ✦ A cada 5 Levels ganha 1 Slot para Habilidades.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐓𝐫𝐞𝐢𝐧𝐨𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <h3 class="rpg-section-title">🥊 ✦ 𝐓𝐑𝐄𝐈𝐍𝐎 𝐒𝐎𝐋𝐎 🥊</h3>
+                <p class="rpg-paragraph">廻 ✦ Um treino de cena única, com no mínimo 1.000 caracteres explicando o que você fez para ganhar o XP, como correr, levantar peso e essas coisas!</p>
+                <p class="rpg-paragraph">鬼 ✦ Limite: 4 por semana</p>
+                <p class="rpg-paragraph">戦 ✦ Recompensa: 4.000 XP</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚔️ ✦ 𝐓𝐑𝐄𝐈𝐍𝐎 𝐃𝐔𝐎 ⚔️</h3>
+                <p class="rpg-paragraph">廻 ✦ Um treino com 2 pessoas, onde acontece um combate amistoso, sendo proibido matar seu "rival". A batalha deve ter no mínimo 500 caracteres e no mínimo 5 cenas cada.</p>
+                <p class="rpg-paragraph">鬼 ✦ Limite: 2 por semana</p>
+                <p class="rpg-subtitle">戦 ✦ Recompensas:</p>
+                <p class="rpg-paragraph">術 ✦ 5/5 cenas → 5.000 XP</p>
+                <p class="rpg-paragraph">術 ✦ 10/10 cenas → 10.000 XP</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🛡️ ✦ 𝐓𝐑𝐄𝐈𝐍𝐎 𝐒𝐐𝐔𝐀𝐃 🛡️</h3>
+                <p class="rpg-paragraph">廻 ✦ Um treino com no mínimo 3 pessoas e no máximo 6 pessoas, onde quanto mais pessoas, mais recompensas. Um combate também amistoso que poderá ser feito da forma que vocês quiserem e deve ter no mínimo 5 cenas de cada!</p>
+                <p class="rpg-paragraph">鬼 ✦ Só pode participar 1 por semana.</p>
+                <p class="rpg-subtitle">戦 ✦ Recompensas:</p>
+                <p class="rpg-paragraph">術 ✦ 3 pessoas → 28.000 XP</p>
+                <p class="rpg-paragraph">術 ✦ 4 pessoas → 33.000 XP</p>
+                <p class="rpg-paragraph">術 ✦ 5 pessoas → 38.000 XP</p>
+                <p class="rpg-paragraph">術 ✦ 6 pessoas → 46.000 XP</p>
+
+                <p class="rpg-obs" style="margin-top: 15px;">— Obs: É obrigatório usar a contagem de quantos treinos já fez de cada tipo, por exemplo: treino solo 2/4, para não conter erros. –</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐌𝐢𝐬𝐬𝐚̃𝐨 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎R𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ Teremos dois tipos de missões onde serão as missões auto narradas, e as missões que serão narradas por alguém da ADM e alguém da Staff.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐌𝐈𝐒𝐒𝐀̃𝐎 𝐀𝐔𝐓𝐎 𝐍𝐀𝐑𝐑𝐀𝐃𝐀 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ A missão auto narrada terá alguns requisitos onde poderá ser feita com alguém ou solo.</p>
+                <p class="rpg-paragraph">術 ✦ A missão com mais de 1 pessoa rende o dobro de xp para os envolvidos independente do número de players.</p>
+                <p class="rpg-paragraph">鬼 ✦ As missões serão passadas para o Líder da Guilda, ou para a Associação de Caçadores e irá chegar aos integrantes; qualquer um pode fazer.</p>
+                <p class="rpg-paragraph">⚡ ✦ Requisitos: Mínimo 200 palavras, ser de algum esquadrão.</p>
+                <p class="rpg-paragraph">👑 ✦ Premiação: 4k de xp, 1000¥, 6 pedras de mana.</p>
+                <p class="rpg-paragraph">📜 ✦ A partir do Nível 60, a premiação será em dobro.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚔️ ✦ 𝐌𝐈𝐒𝐒𝐀̃𝐎 𝐍𝐀𝐑𝐑𝐀𝐃𝐀 ⚔️</h3>
+                <p class="rpg-paragraph">廻 ✦ A missão narrada terá requisitos diferentes. A missão será dividida por níveis; os níveis irão definir a dificuldade para que possa ser feita a missão, será de Nível C até o Nível S.</p>
+                <p class="rpg-subtitle">戦 ✦ 𝐏𝐑𝐄𝐌𝐈𝐀𝐂̧𝐀̃𝐎 戦</p>
+                <p class="rpg-paragraph">廻 ✦ Nível C: 2.000 XP, 500¥, 4 Pedras de Mana</p>
+                <p class="rpg-paragraph">術 ✦ Nível B: 4.000 XP, 1000¥, 7 pedras de mana</p>
+                <p class="rpg-paragraph">鬼 ✦ Nível A: 8.000 XP, 3000¥, 10 pedras de mana</p>
+                <p class="rpg-paragraph">戦 ✦ Nível S: 16.000 XP, 6000¥, 15 pedras de Mana</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐗𝐏 𝐩𝐨𝐫 𝐈𝐧𝐭𝐞𝐫𝐚𝐜̧𝐚̃𝐨 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ Entendemos que nem só de combates vive o RPG. As cenas casuais como interações sociais, momentos introspectivos, desenvolvimento de relações ou ambientações leves são fundamentais para enriquecer a narrativa e dar vida ao mundo.</p>
+                <p class="rpg-paragraph">鬼 ✦ Pensando nisso, criamos um sistema simples e equilibrado para recompensar a participação nessas cenas com ganho de XP.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">📜 ✦ 𝐑𝐄𝐆𝐑𝐈𝐍𝐇𝐀𝐒 📜</h3>
+                <p class="rpg-paragraph">廻 ✦ Cada cena casual ON (interação leve, social, ambientação, etc.) rende de 500 a 2.500 XP, dependendo do envolvimento e da quantidade de cenas.</p>
+                <p class="rpg-paragraph">術 ✦ Para contar, a cena deve ter no mínimo 100 palavras escritas.</p>
+                <p class="rpg-paragraph">鬼 ✦ O XP máximo semanal é 2.500 XP.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚡ ✦ 𝐆𝐀𝐍𝐇𝐎 𝐃𝐄 𝐗𝐏 𝐏𝐎𝐑 𝐂𝐄𝐍𝐀𝐒 ⚡</h3>
+                <p class="rpg-paragraph">廻 ✦ (3 a 4 cenas por semana): 500 XP</p>
+                <p class="rpg-paragraph">術 ✦ (5 a 8 cenas por semana): 1.500 XP</p>
+                <p class="rpg-paragraph">鬼 ✦ (9 a 10+ cenas por semana ou com construção narrativa): 2.500 XP</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">👑 ✦ 𝐁𝐎̂𝐍𝐔𝐒 𝐄 𝐕𝐄𝐑𝐈𝐅𝐈𝐂𝐀𝐂̧𝐀̃𝐎 👑</h3>
+                <p class="rpg-paragraph">廻 ✦ Bônus de Consistência: Se o jogador participar de 5 ou mais cenas válidas na semana, recebe +600 XP de bônus.</p>
+                <p class="rpg-paragraph">術 ✦ Use a marcação marque a My na cena para facilitar a contagem.</p>
+                <p class="rpg-paragraph">鬼 ✦ XP é conferido e atualizado no domingo à noite.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐃𝐢𝐯𝐮𝐥𝐠𝐚𝐜̧𝐚̃𝐨 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐃𝐈𝐕𝐔𝐋𝐆𝐀𝐂̧𝐀̃𝐎 𝐄𝐌 𝐆𝐑𝐔𝐏𝐎𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ Divulgando o spam do RPG em 2 grupos, seja do WhatsApp ou do Facebook e enviando print para o adm que você atualiza a ficha, você ganhará 20.000 XP e 2500¥, pelos dois grupos, podendo divulgar apenas uma vez por semana.</p>
+                <p class="rpg-paragraph">鬼 ✦ Domingo começa uma nova semana!</p>
+                <p class="rpg-paragraph">戦 ✦ Caso divulgue em 10 grupos, você vai ganhar 5000¥ ao invés de 2500¥.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">📲 ✦ 𝐃𝐈𝐕𝐔𝐋𝐆𝐀𝐂̧𝐀̃𝐎 𝐍𝐎 𝐏𝐑𝐈𝐕𝐀𝐃𝐎 (𝐏𝐕) 📲</h3>
+                <p class="rpg-paragraph">廻 ✦ Envie o spam do RPG para alguém que você conheça no privado e caso a pessoa entre no rpg, fazendo a ficha, sendo aprovada e entrando nos grupos, você ganhará 40.000 XP e 5000¥ podendo fazer apenas um recrutamento por semana.</p>
+                <p class="rpg-paragraph">鬼 ✦ Domingo começa uma nova semana!</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">📜 ✦ 𝐃𝐔́𝐕𝐈𝐃𝐀 𝐅𝐑𝐄𝐐𝐔𝐄𝐍𝐓𝐄 📜</h3>
+                <p class="rpg-paragraph">⚡ ✦ Os Xp e Ryōs só são ganhos caso divulguem em 2 ou 10 grupos?</p>
+                <p class="rpg-paragraph">術 ✦ Exato. Divulgando em menos de dois e mais/menos de dez não ganhará a premiação!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+    </div>
+
+</section>
+
+<section id="sistema-guilda" class="page-section">
+
+    <div class="system-card">
+        <div class="system-header">
+            <h1 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚𝐬 𝐝𝐞 𝐆𝐮𝐢𝐥𝐝𝐚𝐬 & 𝐃𝐞𝐦𝐚𝐢𝐬 𝐒𝐢𝐬𝐭𝐞𝐦𝐚𝐬 呪</h1>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+            <p class="rpg-paragraph">廻 ✦ Nesta seção, você encontrará todas as diretrizes completas sobre o funcionamento das Guildas e dos demais sistemas integrados do nosso RPG.</p>
+            <p class="rpg-paragraph">鬼 ✦ Aqui estão detalhados os requisitos para criação e entrada em guildas, benefícios de aliança, regras de esquadrão e o gerenciamento de recursos da sua equipe.</p>
+            <p class="rpg-paragraph">戦 ✦ Leia com bastante atenção todas as regras para garantir que sua guilda prospere e domine os portões mais perigosos do Sistema!</p>
+        </div>
+    </div>
+
+    <div class="system-card">
+        <div class="system-header">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐆𝐮𝐢𝐥𝐝𝐚𝐬 呪</h2>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+            <p class="rpg-paragraph">廻 ✦ As guildas servem para muitos propósitos dentro do RPG, entre eles farmar dinheiro.</p>
+            <p class="rpg-paragraph">鬼 ✦ As guildas podem contar com quantos players quiserem.</p>
+            <p class="rpg-paragraph">戦 ✦ As guildas pagam seus caçadores de acordo com o Rank e com a arrecadação.</p>
+            <p class="rpg-paragraph">⚡ ✦ O líder da guilda é quem mais ganha dentro de uma guilda.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">👑 ✦ 𝐂𝐑𝐈𝐀𝐂̧𝐀̃𝐎 𝐄 𝐑𝐀𝐍𝐊𝐒 𝐃𝐄 𝐆𝐔𝐈𝐋𝐃𝐀 👑</h3>
+            <p class="rpg-paragraph">廻 ✦ Para criar uma guilda basta pegar um símbolo, escolher um nome e anunciar, ou convidar novos membros.</p>
+            <p class="rpg-paragraph">術 ✦ Os Ranks de guildas são medidos de acordo com a força de seus membros (players). Quanto maior o Rank e a guilda, maior sua influência.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank S: Pelo menos 2 Rank S.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank A: Pelo menos 2 Rank A.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank B: Pelo menos 2 Rank B.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank C: Pelo menos 1 Rank C.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank D: Pelo menos 1 Rank D.</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank E: Pelo menos 1 Rank E.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">💰 ✦ 𝐀𝐑𝐑𝐄𝐂𝐀𝐃𝐀𝐂̧𝐀̃𝐎 𝐄 𝐂𝐀Ç𝐀𝐃𝐎𝐑𝐄𝐒 (𝐍𝐏𝐂) 💰</h3>
+            <p class="rpg-paragraph">廻 ✦ As guildas podem juntar dinheiro e contratar caçadores (NPC) para fazerem raids em nome das guildas.</p>
+            <p class="rpg-paragraph">術 ✦ Cada NPC de determinado rank arrecada uma quantidade de dinheiro X para os cofres da guilda.</p>
+            <p class="rpg-subtitle">📜 ✦ Razão preço/arrecadação por dia:</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank S: 10.000¥ / 750¥</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank A: 7.500¥ / 500¥</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank B: 6.000¥ / 400¥</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank C: 4.500¥ / 300¥</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank D: 3.000¥ / 200¥</p>
+            <p class="rpg-paragraph">⚔️ ✦ Caçador Rank E: 1.500¥ / 125¥</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">📈 ✦ 𝐁𝐎̂𝐍𝐔𝐒 𝐃𝐄 𝐑𝐀𝐈𝐃 𝐏𝐎𝐑 𝐆𝐔𝐈𝐋𝐃𝐀 📈</h3>
+            <p class="rpg-paragraph">廻 ✦ Fazer parte de uma guilda também aumenta a porcentagem de arrecadação de dinheiro nas raids de acordo com o Rank da sua guilda.</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank S: +100%</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank A: +75%</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank B: +60%</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank C: +40%</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank D: +30%</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank E: +15%</p>
+            <p class="rpg-paragraph">🚨 ✦ Quem não participa de guilda não ganha nenhum bônus em dinheiro pelas raids.</p>
+            <p class="rpg-obs" style="margin-top: 15px;">— Obs: Limite de 15 membros por Guilda. –</p>
+        </div>
+    </div>
+
+    <div class="system-card">
+        <div class="system-header">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐄𝐬𝐭𝐚𝐛𝐞𝐥𝐞𝐜𝐢𝐦𝐞𝐧𝐭𝐨 呪</h2>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+            <p class="rpg-paragraph">廻 ✦ Cada player líder de uma guilda pode efetuar a compra de um estabelecimento, onde cada estabelecimento vai fornecer missões de dungeons diferentes (Autonarradas) que podem ser feitas 1 vez por dia.</p>
+            <p class="rpg-paragraph">鬼 ✦ O custo de um estabelecimento varia de acordo com o rank de uma guilda, e a guilda com maior rank pode obter um melhor estabelecimento.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">💰 ✦ 𝐂𝐔𝐒𝐓𝐎 𝐃𝐎𝐒 𝐄𝐒𝐓𝐀𝐁𝐄𝐋𝐄𝐂𝐈𝐌𝐄𝐍𝐓𝐎𝐒 💰</h3>
+            <p class="rpg-paragraph">廻 ✦ O estabelecimento de rank E custa: 300.000 Yuls</p>
+            <p class="rpg-paragraph">術 ✦ O estabelecimento de rank D custa: 500.000 Yuls</p>
+            <p class="rpg-paragraph">鬼 ✦ O estabelecimento de rank C custa: 600.000 Yuls</p>
+            <p class="rpg-paragraph">戦 ✦ O estabelecimento de rank B custa: 700.000 Yuls</p>
+            <p class="rpg-paragraph">⚡ ✦ O estabelecimento de rank A custa: 800.000 Yuls</p>
+            <p class="rpg-paragraph">👑 ✦ O estabelecimento de rank S custa: 1.000.000 Yuls</p>
+            <p class="rpg-paragraph">📜 ✦ Estabelecimento de rank Nacional: Sem custo, apenas ganho em evento.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">🗡️ ✦ 𝐌𝐈𝐒𝐒𝐎̃𝐄𝐒 𝐏𝐎𝐑 𝐄𝐒𝐓𝐀𝐁𝐄𝐋𝐄𝐂𝐈𝐌𝐄𝐍𝐓𝐎 🗡️</h3>
+            <p class="rpg-paragraph">廻 ✦ Estabelecimento Rank E: 5 missões de rank E e D</p>
+            <p class="rpg-paragraph">術 ✦ Estabelecimento Rank D: 5 missões de rank D e C</p>
+            <p class="rpg-paragraph">鬼 ✦ Estabelecimento Rank C: 7 missões de rank D e C</p>
+            <p class="rpg-paragraph">戦 ✦ Estabelecimento Rank B: 7 missões de rank C e 2 missões de rank B</p>
+            <p class="rpg-paragraph">⚡ ✦ Estabelecimento Rank A: 5 missões de rank B e 5 de rank A</p>
+            <p class="rpg-paragraph">👑 ✦ Estabelecimento Rank S: 10 missões rank A e 2 rank S</p>
+            <p class="rpg-paragraph">📜 ✦ Estabelecimentos de rank nacional: Possuem diariamente 10 missões rank S.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">🎁 ✦ 𝐏𝐑𝐈𝐕𝐈𝐋𝐄́𝐆𝐈𝐎𝐒 𝐄 𝐆𝐀𝐍𝐇𝐎𝐒 🎁</h3>
+            <p class="rpg-paragraph">廻 ✦ Rank E: Sem ganhos adicionais</p>
+            <p class="rpg-paragraph">術 ✦ Rank D: +5% de xp</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank C: +10% de xp</p>
+            <p class="rpg-paragraph">戦 ✦ Rank B: +15% de xp</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank A: +15% de xp e +15% de chance adicional de cristais</p>
+            <p class="rpg-paragraph">👑 ✦ Rank S: +20% de xp e +20% de chance adicional de cristais</p>
+            <p class="rpg-paragraph">📜 ✦ Rank Nacional: Possuem fixadamente +25% em Xp e +25% em chance adicional de cristais.</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">📝 ✦ 𝐓𝐀𝐁𝐄𝐋𝐀 𝐃𝐄 𝐏𝐀𝐋𝐀𝐕𝐑𝐀𝐒 𝐏𝐎𝐑 𝐑𝐀𝐍𝐊 📝</h3>
+            <p class="rpg-paragraph">廻 ✦ Rank E: 150 palavras para cumprir a missão</p>
+            <p class="rpg-paragraph">術 ✦ Rank D: 200 palavras para cumprir a missão</p>
+            <p class="rpg-paragraph">鬼 ✦ Rank C: 250 palavras para cumprir a missão</p>
+            <p class="rpg-paragraph">戦 ✦ Rank B: 300 palavras para cumprir a missão</p>
+            <p class="rpg-paragraph">⚡ ✦ Rank A: 350 palavras para cumprir a missão</p>
+            <p class="rpg-paragraph">👑 ✦ Rank S: 450 palavras para cumprir a missão</p>
+            <p class="rpg-obs" style="margin-top: 15px;">— Obs: Os bônus de xp não se aplicam às missões auto narradas! –</p>
+            <p class="rpg-obs">— Obs²: Limite de apenas 1 auto narrada por dia. –</p>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+    </div>
+
+</section>
+
+<section id="sistema-importante" class="page-section">
+
+    <div class="system-card">
+        <div class="system-header">
+            <h1 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚𝐬 𝐈𝐦𝐩𝐨𝐫𝐭𝐚𝐧𝐭𝐞𝐬 呪</h1>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐀𝐕𝐈𝐒𝐎 𝐅𝐔𝐍𝐃𝐀𝐌𝐄𝐍𝐓𝐀𝐋 術</p>
+            <p class="rpg-paragraph">廻 ✦ Esta é a aba principal para o desenvolvimento e evolução do seu caçador. Aqui estão concentrados os Sistemas Importantes do RPG!</p>
+            <p class="rpg-paragraph">鬼 ✦ Nesta seção você encontrará as mecânicas vitais de Mana, XP, Atributos, Evolução de Nível e Classes.</p>
+            <p class="rpg-paragraph">戦 ✦ Leia tudo com atenção extrema. Compreender estes sistemas é crucial para a construção correta da sua ficha e para a sua sobrevivência nas Dungeons!</p>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚: 𝐂𝐮𝐬𝐭𝐨 𝐝𝐞 𝐌𝐚𝐧𝐚 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ O custo de mana é definido a partir da habilidade que o portador carrega, porém nesse sistema será possível ver o custo mínimo e máximo para cada Rank.</p>
+                <p class="rpg-paragraph">鬼 ✦ Uma habilidade instantânea é uma habilidade conjurada apenas na cena do personagem, pode ser uma bola de fogo ou um avanço para frente por exemplo, assim gastando mana apenas quando usada.</p>
+                <p class="rpg-paragraph">戦 ✦ Uma habilidade contínua é uma habilidade que dura mais de 1 turno, assim custando mana cada turno que está ativa.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🟢 ✦ 𝐑𝐀𝐍𝐊 𝐄 🟢</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 10+1 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 20+2 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 5+1 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 20+2 por Lvl</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🔵 ✦ 𝐑𝐀𝐍𝐊 𝐃 🔵</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 15+1 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 25+2 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 10+1 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 25+2 por Lvl</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🟣 ✦ 𝐑𝐀𝐍𝐊 𝐂 🟣</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 15+2 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 30+3 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 10+2 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 25+3 por Lvl</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🔴 ✦ 𝐑𝐀𝐍𝐊 𝐁 🔴</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 20+3 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 40+4 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 15+3 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 20+4 por Lvl</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚡ ✦ 𝐑𝐀𝐍𝐊 𝐀 ⚡</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 30+4 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 50+5 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 20+4 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 30+5 por Lvl</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">👑 ✦ 𝐑𝐀𝐍𝐊 𝐒 👑</h3>
+                <p class="rpg-paragraph">廻 ✦ Instantânea:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 50+5 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 100+7 por Lvl</p>
+                <p class="rpg-paragraph">戦 ✦ Duradoura:</p>
+                <p class="rpg-paragraph">術 ✦ Mínimo de 30+5 por Lvl</p>
+                <p class="rpg-paragraph">鬼 ✦ Máximo de 90+5 por Lvl</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐓𝐚𝐛𝐞𝐥𝐚 𝐝𝐞 𝐗𝐏 (𝐍𝐢́𝐯𝐞𝐢𝐬 𝟏 𝐚𝐨 𝟏𝟎𝟎) 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <h3 class="rpg-section-title">術 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝟏 𝐀𝐎 𝟐𝟎 術</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 1 → 1.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 2 → 2.600 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 3 → 4.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 4 → 6.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 5 → 8.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 6 → 10.300 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 7 → 12.900 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 8 → 15.800 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 9 → 19.100 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 10 → 22.800 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 11 → 25.700 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 12 → 29.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 13 → 34.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 14 → 39.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 15 → 44.600 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 16 → 50.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 17 → 56.900 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 18 → 63.700 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 19 → 71.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 20 → 80.000 XP</p>
+
+                <div class="rpg-divider">— ⚠️ Após atingir o Nível 20, o XP reseta para 0. –</div>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝟐𝟏 𝐀𝐎 𝟑𝟎 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 21 → 9.800 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 22 → 18.300 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 23 → 27.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 24 → 36.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 25 → 47.400 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 26 → 57.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 27 → 68.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 28 → 78.900 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 29 → 91.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 30 → 105.000 XP</p>
+
+                <div class="rpg-divider">— ⚠️ Após atingir o Nível 30, o XP reseta para 0. –</div>
+
+                <h3 class="rpg-section-title">戦 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝟑𝟏 𝐀𝐎 𝟒𝟎 戦</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 31 → 13.100 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 32 → 25.800 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 33 → 39.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 34 → 52.700 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 35 → 66.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 36 → 80.800 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 37 → 96.200 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 38 → 116.900 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 39 → 133.300 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 40 → 150.500 XP</p>
+
+                <div class="rpg-divider">— ⚠️ Após atingir o Nível 40, o XP reseta para 0. –</div>
+
+                <h3 class="rpg-section-title">術 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝟒𝟏 𝐀𝐎 𝟓𝟎 術</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 41 → 18.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 42 → 36.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 43 → 55.400 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 44 → 84.600 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 45 → 105.500 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 46 → 127.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 47 → 143.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 48 → 170.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 49 → 190.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 50 → 230.000 XP</p>
+
+                <div class="rpg-divider">— ⚠️ Após atingir o Nível 50, o XP reseta para 0. –</div>
+
+                <h3 class="rpg-section-title">鬼 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝓓𝟏 𝐀𝐎 𝟕𝟎 鬼</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 51 → 30.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 52 → 50.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 53 → 80.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 54 → 130.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 55 → 160.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 56 → 200.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 57 → 280.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 58 → 330.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 59 → 370.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 60 → 410.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 61 → 440.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 62 → 485.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 63 → 530.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 64 → 590.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 65 → 650.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 66 → 685.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 67 → 750.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 68 → 780.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 69 → 810.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 70 → 900.000 XP</p>
+
+                <div class="rpg-divider">— ⚠️ Após atingir o Nível 70, o XP reseta para 0. –</div>
+
+                <h3 class="rpg-section-title">戦 ✦ 𝐍𝐈́𝐕𝐄𝐈𝐒 𝟕𝟏 𝐀𝐎 𝟏𝟎𝟎 戦</h3>
+                <p class="rpg-paragraph">廻 ✦ Nível 71 → 50.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 72 → 60.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 73 → 80.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 74 → 100.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 75 → 120.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 76 → 150.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 77 → 170.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 78 → 200.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 79 → 210.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 80 → 250.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 81 → 300.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 82 → 350.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 83 → 380.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 84 → 400.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 85 → 450.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 86 → 500.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 87 → 550.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 88 → 600.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 89 → 650.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 90 → 700.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 91 → 750.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 92 → 800.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 93 → 900.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 94 → 1.000.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 95 → 1.100.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 96 → 1.200.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 97 → 1.300.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 98 → 1.400.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 99 → 1.500.000 XP</p>
+                <p class="rpg-paragraph">廻 ✦ Nível 100 → 2.000.000 XP</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐀𝐥𝐜𝐚𝐧𝐜𝐞 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐂𝐀́𝐋𝐂𝐔𝐋𝐎 𝐃𝐎 𝐀𝐋𝐂𝐀𝐍𝐂𝐄 𝐃𝐀 𝐋𝐄𝐈𝐓𝐔𝐑𝐀 𝐃𝐄 𝐌𝐀𝐍𝐀 術</p>
+                <p class="rpg-paragraph">廻 ✦ Alcance com o buff, quanto mais perto, melhor sabe como o bicho é, podendo saber os movimentos dele.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚙️ ✦ 𝐅𝐎́𝐑𝐌𝐔𝐋𝐀𝐒 𝐃𝐄 𝐂𝐀́𝐋𝐂𝐔𝐋𝐎 ⚙️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Sentidos÷2= Alcance + A cada 20 Pontos 1 metro.</p>
+                <p class="rpg-paragraph">戦 ✦ Classes com Buff em sentido tem o cálculo: Sentido+30%÷2=Alcance + A cada 10 Pontos 1 metro.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐒𝐮𝐛-𝐂𝐥𝐚𝐬𝐬𝐞𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂̧𝐎̃𝐄𝐒 𝐆𝐄𝐑𝐀𝐈𝐒 術</p>
+                <p class="rpg-paragraph">廻 ✦ Uma sub-classe baseada na sua classe primária pode ser escolhida ao chegar no nível 50.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🗡️ ✦ 𝐀𝐒𝐒𝐀𝐒𝐒𝐈𝐍𝐎 🗡️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Furtivo: Aumenta ainda mais a agilidade em 20%</p>
+                <p class="rpg-paragraph">戦 ✦ Ofensivo: Aumenta a fonte do dano em 25% (força ou MP)</p>
+
+                <h3 class="rpg-section-title">🧙‍♂️ ✦ 𝐌𝐀𝐆𝐎 🧙‍♂️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Suporte: Suas magias de suporte tem um aumento de 20% extra nos buffs</p>
+                <p class="rpg-paragraph">戦 ✦ Ofensivo: Seu MP para dano aumenta em mais 15%</p>
+                <p class="rpg-paragraph">⚡ ✦ Defensivo: Magias de defesa aumentam a poder em 15%</p>
+
+                <h3 class="rpg-section-title">⚔️ ✦ 𝐆𝐔𝐄𝐑𝐑𝐄𝐈𝐑𝐎 ⚔️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Balanceado: Todos os atb físicos sobem 10%</p>
+                <p class="rpg-paragraph">戦 ✦ Ofensivo: A fonte do dano, a agilidade e os sentidos sobem 15%</p>
+                <p class="rpg-paragraph">⚡ ✦ Defensivo: Vitalidade e o HP tem bônus de 15%</p>
+
+                <h3 class="rpg-section-title">🛡️ ✦ 𝐓𝐀𝐍𝐊 🛡️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Ofensivo: Ganha um aumento na fonte do dano de 15% e na agilidade de 15%</p>
+                <p class="rpg-paragraph">戦 ✦ Defensivo: Ganha um aumento na vitalidade e no HP de 15% cada. E um aparo de dano de mais 10%. Em contra partida, toda e qualquer ofensiva tem um debuff de 20% no dano final.</p>
+
+                <h3 class="rpg-section-title">🌿 ✦ 𝐇𝐄𝐀𝐋𝐄𝐑 🌿</h3>
+                <p class="rpg-paragraph">鬼 ✦ Restaurador: Suas magias de cura e restauração tem um aumento extra de 15%</p>
+                <p class="rpg-paragraph">戦 ✦ Suporte ofensivo: Suas magias de buff suporte tem um bônus de 15%</p>
+
+                <h3 class="rpg-section-title">🎯 ✦ 𝐀𝐓𝐈𝐑𝐀𝐃𝐎𝐑 🎯</h3>
+                <p class="rpg-paragraph">鬼 ✦ Franco-atirador: Tem seu alcance dobrado e um aumento de 25% na velocidade de disparo</p>
+                <p class="rpg-paragraph">戦 ✦ Infantaria: Luta com armas de médio alcance mas cara a cara. Tem agilidade e sentidos aumentados em 15%</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐀𝐭𝐫𝐢𝐛𝐮𝐭𝐨𝐬 𝐞 𝐄𝐬𝐭𝐚𝐭𝐢́𝐬𝐭𝐢𝐜𝐚𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">術 ✦ 𝐃𝐄𝐅𝐈𝐍𝐈𝐂̧𝐀̃𝐎 𝐃𝐎𝐒 𝐀𝐓𝐑𝐈𝐁𝐔𝐓𝐎𝐒 術</p>
+                <p class="rpg-paragraph">💪🏻 ✦ Força: Representa o poder físico bruto e a capacidade muscular do caçador. Afeta diretamente o dano físico causado em ataques corpo a corpo, testes de empurrão, quebra de impacto e capacidade de carregar equipamentos pesados.</p>
+                <p class="rpg-paragraph">⚡ ✦ Agilidade: Refere-se à velocidade, reflexos, destreza e flexibilidade corporal do personagem. Influencia diretamente na capacidade de esquiva, velocidade de movimento em combate, iniciativa de ataque e precisão dos golpes.</p>
+                <p class="rpg-paragraph">❗ ✦ Sentidos: Engloba a percepção sensorial aguçada do caçador, incluindo visão, audição, olfato e o "sexto sentido" de detecção de intenção ou presença. É utilizado para detectar armadilhas, localizar inimigos ocultos/invisíveis, rastrear e prever movimentos do adversário.</p>
+                <p class="rpg-paragraph">❤️ ✦ Vitalidade: Representa a constituição física, tenacidade e resistência biológica do caçador. Quanto maior a vitalidade, maior será o HP total do personagem e mais resistente ele será contra impactos físicos, venenos, sangramentos e efeitos mágicos prejudiciais.</p>
+                <p class="rpg-paragraph">🤓 ✦ Inteligência: Reflete a capacidade de raciocínio lógico, memória, velocidade de aprendizado e maestria teórica do personagem. Influencia no aprendizado e eficácia de magias complexas, táticas de combate e controle sobre habilidades posteriores.</p>
+                <p class="rpg-paragraph">🪄 ✦ MP (Pontos De Mana): Representa o reservatório de energia mágica espiritual do caçador. É a reserva consumida para ativar qualquer tipo de habilidade, magia ou encantamento. Pode ser recuperado por meio de itens consumíveis, habilidades específicas ou tempo de descanso.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">⚙️ ✦ 𝐑𝐄𝐆𝐑𝐀𝐒 𝐄 𝐈𝐍𝐓𝐄𝐑𝐀𝐂̧𝐎̃𝐄𝐒 𝐃𝐎𝐒 𝐀𝐓𝐑𝐈𝐁𝐔𝐓𝐎𝐒 ⚙️</h3>
+                <p class="rpg-paragraph">鬼 ✦ Interligação de Agilidade e Sentidos: Agilidade e Sentidos estão diretamente conectados. Pessoas extremamente ágeis precisam de sentidos refinados para acompanhar a própria velocidade no espaço. Regra: A diferença entre os valores de Agilidade e Sentidos na sua ficha deve ser de no máximo 30%, respeitando essa dependência mútua.</p>
+                <p class="rpg-paragraph">戦 ✦ Impacto no Dano e Gestão de MP: A Força está vinculada ao dano físico direto de ataques manuais e armas brancas. Já o MP pode ser canalizado para amplificar o dano de magias ou até mesmo para imbuir ataques físicos com mana. Todos devem gerenciar seu MP de forma inteligente e estratégica (Não Seja Burro).</p>
+                <p class="rpg-paragraph">⚡ ✦ Mecanismo de Dano e Morte: A Vitalidade atua como a primeira barreira de defesa do caçador. Quando o personagem sofre um golpe cujo dano excede o valor da sua Vitalidade, todo o valor excedente é subtraído diretamente do seu HP total. Caso o HP chegue a zero, isso resulta na morte definitiva do personagem.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+    </div>
+
+</section>
+
+  <section id="criar-ficha" class="page-section">
+
+    <div class="system-card">
+        <div class="system-header">
+            <h1 class="rpg-title">呪 𝐆𝐮𝐢𝐚: 𝐂𝐨𝐦𝐨 𝐂𝐫𝐢𝐚𝐫 𝐬𝐮𝐚 𝐅𝐢𝐜𝐡𝐚 呪</h1>
+        </div>
+        <div class="system-body">
+            <p class="rpg-subtitle">術 ✦ 𝐏𝐀𝐒𝐒𝐎 𝐀 𝐏𝐀𝐒𝐒𝐎 𝐏𝐀𝐑𝐀 𝐎𝐒 𝐍𝐎𝐕𝐀𝐓𝐎𝐒 術</p>
+            <p class="rpg-paragraph">廻 ✦ Seja bem-vindo, seu burro! Criar a ficha é extremamente simples, basta prestar atenção e não fazer besteira:</p>
+            <p class="rpg-paragraph">鬼 ✦ 1. Sorteio de Rank: Primeiro de tudo, você vai pedir para o ADM do recrutamento sortear o seu Rank.</p>
+            <p class="rpg-paragraph">鬼 ✦ 2. Dados Básicos: Após saber seu Rank, escolha sua classe, nome, idade, gênero e aparência.</p>
+            <p class="rpg-paragraph">鬼 ✦ 3. Poder/Magia Principal: Explique para o ADM o que você quer de poder. Ele vai aceitar ou não dependendo do seu Rank sorteado.</p>
+            <p class="rpg-paragraph">鬼 ✦ 4. Habilidades: Crie habilidades derivadas do seu poder e mande para o ADM aprová-las, incluindo gasto de mana, dano e, claro, alguma fraqueza.</p>
+            <p class="rpg-paragraph">戦 ✦ 5. Preenchimento: Se o ADM aprovar tudo, basta preencher o modelo oficial da ficha abaixo e enviar no grupo!</p>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <h3 class="rpg-section-title">📜 ✦ 𝐌𝐎𝐃𝐄𝐋𝐎 𝐎𝐅𝐈𝐂𝐈𝐀𝐋 𝐃𝐄 𝐅𝐈𝐂𝐇𝐀 📜</h3>
+            <p class="rpg-paragraph">❐ [Nome]<br>•</p>
+            <p class="rpg-paragraph">❐ [Idade]<br>•</p>
+            <p class="rpg-paragraph">❐ [Gênero]<br>•</p>
+            <p class="rpg-paragraph">❐ História (Roll Bônus 200 palavras)<br>•</p>
+            <p class="rpg-paragraph">❐ Aparência<br>•</p>
+            <p class="rpg-paragraph">❐ PERSONALIDADE<br>•</p>
+            <p class="rpg-paragraph">❐ Profissão:<br>• Caçador</p>
+            <p class="rpg-paragraph">❐ Classe:<br>•</p>
+            <p class="rpg-paragraph">❐ Rank (Sorteio)<br>•</p>
+            <p class="rpg-paragraph">❐ Equipamentos (1 de início)<br>•</p>
+            <p class="rpg-paragraph">❐ Nível<br>•</p>
+            <p class="rpg-paragraph">❐ Fortuna¥<br>•</p>
+            <p class="rpg-paragraph">❐ [País De Origem]<br>•</p>
+
+            <div class="rpg-divider">▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭</div>
+            <p class="rpg-paragraph">MAGIA PRINCIPAL<br>⬇️<br>⬇️<br>❐</p>
+            <div class="rpg-divider">▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭</div>
+            <div class="rpg-divider">▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬</div>
+
+            <p class="rpg-paragraph">HABILIDADES INICIAIS<br>⬇️<br>❐<br>❐</p>
+            <p class="rpg-paragraph">❐ ESTATÍSTICAS<br>❐ Força:<br>❐ Agilidade:<br>❐ Vitalidade:<br>❐ Sentidos:<br>❐ Inteligência:<br>❐ Poder Mágico:<br>❐ HP:</p>
+            
+            <p class="rpg-obs" style="margin-top: 15px;">Feito isso, confira agora o Manual Didático Completo de Atributos, Ranks e Classes para preencher seus pontos corretamente:</p>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">呪 𝐌𝐚𝐧𝐮𝐚𝐥 𝐝𝐞 𝐀𝐭𝐫𝐢𝐛𝐮𝐭𝐨𝐬, 𝐑𝐚𝐧𝐤𝐬 𝐞 𝐂𝐥𝐚𝐬𝐬𝐞𝐬 呪</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-subtitle">⚡ ✦ 𝐁𝐔𝐅𝐅 𝐃𝐄 𝐂𝐀Ç𝐀𝐃𝐎𝐑𝐄𝐒 ⚡</p>
+                <p class="rpg-paragraph">廻 ✦ O buff será relacionado a cada rank para ver o que suas magias podem ser capazes de exercer:</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank E: 30%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank D: 40%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank C: 60%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank B: 75%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank A: 100%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank S: 120%</p>
+                <p class="rpg-paragraph">鬼 ✦ Rank N: 130%</p>
+                <p class="rpg-paragraph">👑 ✦ Fragmento De Monarca/Governante: 140%</p>
+                <p class="rpg-paragraph">👑 ✦ Monarca/Governante Completo: 160%</p>
+                <p class="rpg-paragraph">戦 ✦ Os buffs só poderão ser usados no mesmo Atributo duas vezes, será uma forma para não sair nada absurdo da cabeça de vocês. Caso passe de 2 buffs, porém, caçadores considerados Suportes podem aplicar um terceiro buff.</p>
+                <p class="rpg-paragraph">📜 ✦ Caçadores suporte são todos aqueles caçadores de classe healer ou Mago que tenham magias de buff PARA TERCEIROS.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">📊 ✦ 𝐄𝐒𝐓𝐀𝐓𝐈́𝐒𝐓𝐈𝐂𝐀𝐒 𝐄 𝐒𝐔𝐀𝐒 𝐅𝐔𝐍𝐂̧𝐎̃𝐄𝐒 📊</h3>
+                <p class="rpg-paragraph">💪🏻 ✦ Força: Representa a força física da pessoa. Afeta diretamente o dano físico causado em ataques corpo a corpo.</p>
+                <p class="rpg-paragraph">⚡ ✦ Agilidade: Refere-se à agilidade física e destreza da pessoa. Influencia na esquiva, na velocidade de movimento e na precisão dos ataques.</p>
+                <p class="rpg-paragraph">❗ ✦ Sentidos: Engloba os sentidos aguçados da pessoa, como visão, audição e percepção geral. Pode ser utilizado para detectar armadilhas, inimigos ocultos e outros perigos.</p>
+                <p class="rpg-paragraph">❤️ ✦ Vitalidade: Representa a resistência da pessoa. Quanto maior a vitalidade, mais HP o personagem terá e mais resistente será a ataques físicos e magias.</p>
+                <p class="rpg-paragraph">🤓 ✦ Inteligência: Reflete a capacidade mental da pessoa, influenciando na eficácia de magias e habilidades posteriores.</p>
+                <p class="rpg-paragraph">🪄 ✦ MP (Pontos De Mana): Representa a energia mágica da pessoa. É consumido ao lançar magias e pode ser recuperado por meio de itens consumíveis ou descanso.</p>
+                <p class="rpg-paragraph">🚨 ✦ Agilidade e sentidos estão interligados, pois pessoas ágeis geralmente têm sentidos aguçados para acompanhar sua rapidez. A diferença entre os valores de agilidade e sentidos deve ser de no máximo 30%, indicando essa relação de dependência dos 2.</p>
+                <p class="rpg-paragraph">🚨 ✦ Além disso, a força está diretamente relacionada ao dano físico, indicando que pessoas mais fortes causam mais dano em ataques corpo a corpo. MP pode ser utilizado para aumentar o dano de magias ou ataques físicos que usam mana, incentivando todos a gerenciar seu MP de forma inteligente (Não Seja Burro).</p>
+                <p class="rpg-paragraph">🚨 ✦ Quando uma pessoa sofre dano que excede sua vitalidade, o valor excedente é subtraído do HP de si, o que leva à sua morte.</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🎲 ✦ 𝐑𝐀𝐍𝐊𝐒 𝐃𝐄 𝐂𝐀Ç𝐀𝐃𝐎𝐑𝐄𝐒 🎲</h3>
+                <p class="rpg-paragraph">廻 ✦ Seu rank é decidido por sorteio no ato da criação de sua ficha, e os seguintes ranks e respectivos atributos podem cair. A rolagem de dados é feita de 2 a 200:</p>
+                <p class="rpg-paragraph">🟢 ✦ Rank E: Nível de poder mais baixo entre os caçadores, usam habilidades extremamente básicas e têm apenas 100 de atributos iniciais. (2-80)</p>
+                <p class="rpg-paragraph">🔵 ✦ Rank D: Segundo Rank de caçadores. Usam também habilidades mágicas básicas e possuem 200pts iniciais. (81-120)</p>
+                <p class="rpg-paragraph">🟣 ✦ Rank C: É um dos dois ranks intermediários. Tudo nesse rank é mediano, assim como as habilidades e nível de poder. 300 iniciais. (121-160)</p>
+                <p class="rpg-paragraph">🔴 ✦ Rank B: Rank que vai de intermediário pra forte. Possuem habilidades um pouco mais elaboradas e poderosas. 500 iniciais. (161-180)</p>
+                <p class="rpg-paragraph">⚡ ✦ Rank A: Já é considerado um rank alto dentro do universo de solo leveling. Possuem habilidades razoavelmente fortes e iniciam com 750 pontos. (181-190)</p>
+                <p class="rpg-paragraph">👑 ✦ Rank S: É o segundo rank mais alto entre caçadores. Possuem habilidades muito poderosas e iniciam com 1.000 pontos. (191-198)</p>
+                <p class="rpg-paragraph">🏆 ✦ Rank Nacional: É o rank mais alto existente dentro do universo de solo leveling. Tudo aqui é muito forte e bem elaborado. Inicia com 1.500 pontos. (199-200)</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">❤️ ✦ 𝐂𝐀́𝐋𝐂𝐔𝐋𝐎 𝐃𝐄 𝐇𝐏 𝐏𝐎𝐑 𝐂𝐋𝐀𝐒𝐒𝐄 ❤️</h3>
+                <p class="rpg-paragraph">廻 ✦ Atualizem sua vida conforme a classe escolhida:</p>
+                <p class="rpg-paragraph">⚔️ ✦ CASO VOCÊ SEJA LUTADOR: 4.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">🛡️ ✦ CASO VOCÊ SEJA TANK: 5.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">🌿 ✦ CASO VOCÊ SEJA HEALER OU MAGO: 3.000 * Lvl + Vitalidade * 2</p>
+                <p class="rpg-paragraph">🎯 ✦ CASO VOCÊ SEJA RANGER OU ASSASSINO: 3.500 * Lvl + Vitalidade * 2</p>
+
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+                <h3 class="rpg-section-title">🗡️ ✦ 𝐂𝐋𝐀𝐒𝐒𝐄𝐒 🗡️</h3>
+                <p class="rpg-paragraph">🧙‍♂️ ✦ • MAGO •<br>Caçadores classificados como magos são os mais versáteis entre todos e têm capacidade para executar magias de elementos, impor pragas e evocar entidades para batalhar ao seu lado. Por consequência, um vasto segmento de seus talentos são ofensivas de disparos. Contudo, por serem combatentes de longo alcance, os famigerados magos se encontram em significativa inferioridade em lutas corpo a corpo.</p>
+                <p class="rpg-paragraph">鬼 ✦ +40% em MP</p>
+                <p class="rpg-paragraph">鬼 ✦ +20% em Inteligência</p>
+                <p class="rpg-paragraph">鬼 ✦ +10% em Sentidos</p>
+
+                <p class="rpg-paragraph">🗡️ ✦ • ASSASSINO •<br>São ligeiros e leves, e são vistos como os predadores mais ágeis. Eles geralmente combatem com armamentos reduzidos, tais como adagas ou espadas de difícil detecção. A agilidade deles pode fazer com que sejam complicados de serem atingidos por predadores de diferentes categorias; magos, especialmente, ficam em desvantagem contra eles devido à demora para executar suas magias.</p>
+                <p class="rpg-paragraph">鬼 ✦ +40% em Agilidade</p>
+                <p class="rpg-paragraph">鬼 ✦ +30% em Sentidos</p>
+
+                <p class="rpg-paragraph">⚔️ ✦ • LUTADOR / GUERREIRO •<br>São hábeis em infligir massivos danos aos oponentes e frequentemente participam de confrontos físicos diretos. Possuem defesa consideravelmente robusta e elevada tenacidade. Por serem combatentes, esses guerreiros comumente empregam armamentos como sabres, machados, punhais e até mesmo seus punhos.</p>
+                <p class="rpg-paragraph">鬼 ✦ +30% em Força</p>
+                <p class="rpg-paragraph">鬼 ✦ +20% em Vitalidade</p>
+                <p class="rpg-paragraph">鬼 ✦ +10% em Agilidade</p>
+
+                <p class="rpg-paragraph">🛡️ ✦ • TANKER •<br>Especialistas em defesa, os tanker normalmente portam escudos e vestem armaduras pesadas, tendo como responsabilidade a salvaguarda do restante do grupo durante os confrontos, permitindo que os demais caçadores executem suas funções. Em comparação com outras categorias, os defensores são substancialmente mais resistentes e conseguem suportar muito mais castigo em combate antes de sucumbir. Eles costumam atrair a atenção e os ataques das criaturas, abrindo espaço para os Combatentes ou Arqueiros agirem sem temor de contra-ataque. Entretanto, apesar de sua defesa ser o ponto forte, os defensores também podem partir para o ataque com facilidade. Para preservar sua robustez em batalha, frequentemente recorrem a Curandeiros para obterem buffs e suporte curativo.</p>
+                <p class="rpg-paragraph">鬼 ✦ +40% em Vitalidade</p>
+                <p class="rpg-paragraph">鬼 ✦ +10% em Força</p>
+                <p class="rpg-paragraph">鬼 ✦ 10% de redução de dano</p>
+
+                <p class="rpg-paragraph">🎯 ✦ • RANGER •<br>Embora tanto magos quanto atiradores realizem ataques de longo alcance, eles se distinguem pelo fato de que são atiradores. Por consequência, eles comumente manejam arcos longos e virotes ou balestras e têm a responsabilidade de proteger as áreas vulneráveis de seus companheiros durante confrontos. Lamentavelmente, isso também implica que eles possuem uma considerável desvantagem em lutas mano a mano.</p>
+                <p class="rpg-paragraph">鬼 ✦ +30% em Agilidade</p>
+                <p class="rpg-paragraph">鬼 ✦ +20% em Sentidos</p>
+                <p class="rpg-paragraph">鬼 ✦ +20% em Inteligência</p>
+
+                <p class="rpg-paragraph">🌿 ✦ • HEALER •<br>Diferentemente de outras categorias, os healers atuam primariamente como suporte e contam com os combatentes e tanques para sua defesa em combate. Enquanto sua especialização se concentra em restaurar a saúde dos outros aventureiros de suas lesões, os curandeiros também têm a habilidade de conjurar encantamentos buff, visando aprimorar tanto suas capacidades quanto as de seus aliados no grupo. Contudo, por focarem sobretudo em habilidades de suporte, eles normalmente se encontram em grande desvantagem em confrontos diretos.</p>
+                <p class="rpg-paragraph">鬼 ✦ +50% em MP para Habilidades de Suporte</p>
+                <p class="rpg-paragraph">鬼 ✦ + Aumento de nível de caçador (magia de aprimoramento) para healers acima do Rank C</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-card">
+        <p class="rpg-obs">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+    </div>
+
+</section>     
+
+       
+     <section id="loja" class="page-section">
+
+    <div class="system-card">
+        <div class="system-header">
+            <h1 class="rpg-title">呪 𝐒𝐢𝐬𝐭𝐞𝐦𝐚 𝐝𝐞 𝐋𝐨𝐣𝐚 𝐞 𝐁𝐚𝐧𝐜𝐨 呪</h1>
+        </div>
+        <div class="system-body">
+            
+            <div class="shop-intro-container">
+                <div class="shop-intro-text">
+                    <p class="rpg-subtitle">🛒 ✦ 𝐂𝐎𝐌𝐎 𝐅𝐔𝐍𝐂𝐈𝐎𝐍𝐀 𝐀 𝐋𝐎𝐉𝐀? 🛒</p>
+                    <p class="rpg-paragraph">廻 ✦ Na nossa loja você encontrará equipamentos, consumíveis e itens variados do Rank E ao Rank S para fortalecer seu caçador.</p>
+                    <p class="rpg-paragraph">鬼 ✦ <b>Passo a Passo para Compras:</b></p>
+                    <p class="rpg-paragraph">1. Escolha o item desejado no catálogo da loja.</p>
+                    <p class="rpg-paragraph">2. Copie e preencha a ficha do Banco enviando as informações do item que deseja comprar.</p>
+                    <p class="rpg-paragraph">3. Envie a ficha no Grupo da Loja e aguarde a aprovação do ADM responsável (a My).</p>
+                    <p class="rpg-paragraph">4. Após a aprovação, atualize sua ficha pessoal: desconte os Ryōs (¥) e adicione seu novo item ao inventário!</p>
+                </div>
+                <div class="shop-intro-img">
+                    <img src="img/atendente_my.jpg" alt="Atendente da Loja">
+                </div>
+            </div>
+
+            <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+
+            <div class="bank-card">
+                <h3 class="rpg-section-title">🏦 ✦ 𝐅𝐈𝐂𝐇𝐀 𝐃𝐎 𝐁𝐀𝐍𝐂𝐎 🏦</h3>
+                <textarea id="ficha-banco-text" readonly>
+🏦 ✦ 𝐅𝐈𝐂𝐇𝐀 𝐃𝐎 𝐁𝐀𝐍𝐂𝐎 🏦
+
+🏦💸B.A.N.C.O💸🏦
+
+|•Nome:
+
+|•Rank:
+
+|•Money:
+
+➖•〰️ꗮ°•💸-❛{🏦}❜-💸•°ꗮ〰️•➖
+
+–Sempre que Tiver alguma Movimentação no seu Money deve sempre atualizar aqui, caso a ausência de 24Hrs de atualização apos gasto e ganho de dinheiro receberá um Juros de redução de 20% do seu Saldo.
+
+ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ
+</textarea>
+                <button class="copy-btn" onclick="copiarFichaBanco()">
+                    <i class="fa-solid fa-copy"></i> Copiar Ficha do Banco
+                </button>
+            </div>
+
+            <p class="rpg-obs" style="margin-top: 15px;">— 𝐎𝐁𝐒: Sistemas Sujeitos a Alteração.–</p>
+
+        </div>
+    </div>
+
+    <div class="shop-search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="shop-search-input" placeholder="Pesquisar item da loja..." onkeyup="filtrarItensLoja()">
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">🟢 ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐄 🟢</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <div class="shop-grid">
+                    
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/adaga_comum.jpg" alt="Adaga comum">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Adaga comum</h4>
+                            <p class="item-desc">Equipamento padrão para caçadores iniciantes.</p>
+                            <p class="item-price">Preço: 150¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_medieval.jpg" alt="Espada medieval">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Espada medieval</h4>
+                            <p class="item-desc">Espada simples e resistente de ferro.</p>
+                            <p class="item-price">Preço: 200¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/katana.jpg" alt="Katana">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Katana</h4>
+                            <p class="item-desc">Lâmina afiada tradicional.</p>
+                            <p class="item-price">Preço: 200¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/escudo.jpg" alt="Escudo">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Escudo</h4>
+                            <p class="item-desc">Proteção básica contra ataques físicos.</p>
+                            <p class="item-price">Preço: 300¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/peitoral.jpg" alt="Peitoral">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Peitoral</h4>
+                            <p class="item-desc">Armadura de peito básica.</p>
+                            <p class="item-price">Preço: 300¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/arco.jpg" alt="Arco">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Arco</h4>
+                            <p class="item-desc">Arco simples para combates à distância.</p>
+                            <p class="item-price">Preço: 200¥</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">🔵 ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐃 🔵</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-paragraph">廻 ✦ Os equipamentos dessa classe dão um buff de 5% em até dois atributos da arma. Armas de ataque concedem Força e Agilidade e armas defensivas concedem Vitalidade.</p>
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+                <div class="shop-grid">
+                    
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/adaga_rara.jpg" alt="Adaga rara">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Adaga rara</h4>
+                            <p class="item-desc">Lâmina refinada com melhor acabamento.</p>
+                            <p class="item-price">Preço: 600¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_especial.jpg" alt="Espada medieval especial">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Espada medieval especial</h4>
+                            <p class="item-desc">Forjada com aço de liga superior.</p>
+                            <p class="item-price">Preço: 800¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/katana_samurai.jpg" alt="Katana do samurai">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Katana do samurai</h4>
+                            <p class="item-desc">Lâmina equilibrada para cortes rápidos.</p>
+                            <p class="item-price">Preço: 800¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/escudo_fortalecido.jpg" alt="Escudo fortalecido">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Escudo fortalecido</h4>
+                            <p class="item-desc">Reforçado com placas de metal endurecido.</p>
+                            <p class="item-price">Preço: 1.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/peitoral_fortalecido.jpg" alt="Peitoral fortalecido">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Peitoral fortalecido</h4>
+                            <p class="item-desc">Proteção aprimorada para o tronco.</p>
+                            <p class="item-price">Preço: 1.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/arco_composto.jpg" alt="Arco composto">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Arco composto</h4>
+                            <p class="item-desc">Maior tensão e alcance de disparo.</p>
+                            <p class="item-price">Preço: 700¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/machado_bruto.jpg" alt="Machado bruto">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Machado bruto</h4>
+                            <p class="item-desc">Pesado e focado em impacto direto.</p>
+                            <p class="item-price">Preço: 900¥</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">🟣 ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐂 🟣</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <p class="rpg-paragraph">廻 ✦ Os equipamentos dessa classe dão um buff de 10% em até dois atributos da arma. Armas de ataque concedem Força e Agilidade e armas defensivas concedem Vitalidade.</p>
+                <div class="rpg-divider">ⳓ ⃦֟֯፝͟▬꯭۫ꔖᰛᰳ࣭☁̶໋⃨ᰅᰳꔖ꯭۫▬⃦֟֯፝͟Ⳋ</div>
+                <div class="shop-grid">
+                    
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/adaga_magica.jpg" alt="Adaga mágica">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Adaga mágica</h4>
+                            <p class="item-desc">Imbuída com energia arcana básica.</p>
+                            <p class="item-price">Preço: 1.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_magica.jpg" alt="Espada medieval mágica">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Espada medieval mágica</h4>
+                            <p class="item-desc">Lâmina encantada para maior precisão.</p>
+                            <p class="item-price">Preço: 2.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/katana_magica.jpg" alt="Katana mágica">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Katana mágica</h4>
+                            <p class="item-desc">Fluxo de mana que corta com facilidade.</p>
+                            <p class="item-price">Preço: 2.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/escudo_magico.jpg" alt="Escudo mágico">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Escudo mágico</h4>
+                            <p class="item-desc">Absorve parte do impacto com energia de mana.</p>
+                            <p class="item-price">Preço: 3.200¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/peitoral_fortalecido_c.jpg" alt="Peitoral fortalecido">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Peitoral fortalecido</h4>
+                            <p class="item-desc">Proteção mágica reforçada.</p>
+                            <p class="item-price">Preço: 3.200¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/arco_magico.jpg" alt="Arco composto mágico">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Arco composto mágico</h4>
+                            <p class="item-desc">Dispara flechas canalizadas com mana.</p>
+                            <p class="item-price">Preço: 1.500¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/machado_magico.jpg" alt="Machado mágico">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Machado mágico</h4>
+                            <p class="item-desc">Impacto pesado imbuído de energia de combate.</p>
+                            <p class="item-price">Preço: 2.300¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/cajado_magico.jpg" alt="Cajado mágico">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">Cajado mágico</h4>
+                            <p class="item-desc">Catalisador básico para condutividade mágica.</p>
+                            <p class="item-price">Preço: 2.700¥</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">🔴 ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐁 🔴</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <div class="shop-grid">
+                    <p class="rpg-paragraph">Em breve mais produtos de Rank B...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">⚡ ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐀 ⚡</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <div class="shop-grid">
+                    
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/grimorio_demonio_chamas.jpg" alt="Grimório do Demônio em Chamas">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">📖 ✦ Grimório do Demônio em Chamas</h4>
+                            <p class="item-desc">Tipo: Catalisador<br>Um grimório feito das cinzas de um antigo demônio de fogo. Concede +50% de MP e dano em magias com aspecto piromante. Reduz o dano de magias de fogo recebido em 60%.</p>
+                            <p class="item-price">Preço: 110.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/presa_kasaka.jpg" alt="Presa Venenosa de Kasaka">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🐍 ✦ Presa Venenosa de Kasaka</h4>
+                            <p class="item-desc">Tipo: Adaga<br>Lâmina feita a partir das presas de uma serpente venenosa. Tira 1% da vida do alvo por turno ao cortar (escala até 5% da vida máxima). Reduz a cura de healers/magos no afetado em 70%.</p>
+                            <p class="item-price">Preço: 75.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_orc.jpg" alt="Espada Colossal de Orc">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">👹 ✦ Espada Colossal de Orc</h4>
+                            <p class="item-desc">Tipo: Espada<br>Espada longa extremamente pesada. Em uma única mão traz desvantagem de 30% nos atributos físicos. Invoca espírito orc (2x por luta): debuff de 50% em magias, mas buff de 60% em aspectos físicos.</p>
+                            <p class="item-price">Preço: 90.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/assassina_cavaleiros.jpg" alt="Assassina de Cavaleiros">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🗡️ ✦ Assassina de Cavaleiros</h4>
+                            <p class="item-desc">Tipo: Adaga<br>Ignora 5% da resistência do oponente, acumulando +2,5% a cada golpe bem-sucedido. Ao atingir mais de 5 golpes, causa sangramento de 5% da vida máxima que ultrapassa armadura.</p>
+                            <p class="item-price">Preço: 125.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/tridente_naga.jpg" alt="Tridente do Dragão Guardião Naga">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔱 ✦ Tridente do Dragão Guardião Naga</h4>
+                            <p class="item-desc">Tipo: Tridente / Catalisador<br>Aumenta a mana e capacidade mágica em 30%. Habilidades hidrocinéticas reduzem a velocidade do alvo em 20% e outros atributos físicos em 10% por 3 turnos.</p>
+                            <p class="item-price">Preço: 155.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/falcao_negro.jpg" alt="Falcão Negro">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🦅 ✦ Falcão Negro</h4>
+                            <p class="item-desc">Tipo: Pistola<br>Dispara balas umbracinéticas (30 MP por tiro). Cada tiro reduz os status físicos do alvo em 2% (até 40%). Ao atingir 20% de redução, permite tiro especial (60 MP) causando o dobro do dano inicial.</p>
+                            <p class="item-price">Preço: 125.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/orbe_avareza.jpg" alt="Orbe da Avareza">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔮 ✦ Orbe da Avareza</h4>
+                            <p class="item-desc">Tipo: Catalisador<br>Aumenta a capacidade de magias em 75% após todos os buffs, porém aumenta o custo de todas as magias em 35%. Obriga o usuário a continuar conjurando magias a cada turno até o fim da batalha.</p>
+                            <p class="item-price">Preço: 110.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/martelo_golem.jpg" alt="Martelo do Golem de Pedra">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔨 ✦ Martelo do Golem de Pedra</h4>
+                            <p class="item-desc">Tipo: Martelo<br>Imune a feitiços na própria arma. Concede +25% de vitalidade passiva. Dano usa o melhor atributo (Força ou MP). Cria escudo translúcido de azul com durabilidade igual ao MP (5m x 3m).</p>
+                            <p class="item-price">Preço: 160.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/adaga_baruka.jpg" alt="Adaga de Baruka">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🗡️ ✦ Adaga de Baruka</h4>
+                            <p class="item-desc">Tipo: Adaga<br>Concede +70% de agilidade para movimentação e desvios. Dano baseado em destreza. Habilidade especial: gasta (30+5 por Lvl) para se teleportar a até 5m de distância com o dobro da agilidade.</p>
+                            <p class="item-price">Preço: 200.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/arco_radiru.jpg" alt="Arco Divino Radiru">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🏹 ✦ Arco Divino Radiru</h4>
+                            <p class="item-desc">Tipo: Arco<br>Converte luz em flechas (1 por turno sob luz, máx 20). Dano totalmente mágico atravessando 50% da vitalidade do alvo e causando o dobro de dano em seres das trevas.</p>
+                            <p class="item-price">Preço: 130.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/presa_branca_lobo.jpg" alt="Presa Branca do Lobo de Gelo">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">❄️ ✦ Presa Branca do Lobo de Gelo</h4>
+                            <p class="item-desc">Tipo: Espada<br>Apaga fogos normais. Sem proteção ao frio, usuário perde 20% de vitalidade por turno. Aplica congelamento e debuff de 5% por golpe nos status (máx 50%). A 25% de debuff, alvo recebe +100% de dano.</p>
+                            <p class="item-price">Preço: 110.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/katana_dragao.jpg" alt="Katana de Dragão Lustrosa">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🐉 ✦ Katana de Dragão Lustrosa</h4>
+                            <p class="item-desc">Tipo: Katana<br>Com 80% ou mais de HP, concede buff de 45% em todos os atributos físicos. Pode conduzir qualquer outro elemento em conjunto com a magia do usuário.</p>
+                            <p class="item-price">Preço: 125.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/lanca_cavaleiro_demonio.jpg" alt="Lança do Cavaleiro Demônio">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔱 ✦ Lança do Cavaleiro Demônio</h4>
+                            <p class="item-desc">Tipo: Catalisador / Lança<br>Infundida com magia sagrada, concede +50% de dano contra demônios e monstros malignos. Permite usar Inteligência como base para o dano físico.</p>
+                            <p class="item-price">Preço: 50.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/vento_oeste.jpg" alt="Vento do Oeste">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">💨 ✦ Vento do Oeste</h4>
+                            <p class="item-desc">Tipo: Fuzil de Precisão<br>Balas de mana de vento (20+5Lvl). Podem ser carregadas por até 5 turnos (buffs de até 125%). Dano base: 1,5x Agilidade + 50% MP. 40% do dano total é penetrante no HP.</p>
+                            <p class="item-price">Preço: 125.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_dragao.jpg" alt="Espada Larga de Escama de Dragão">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🐉 ✦ Espada Larga de Escama de Dragão</h4>
+                            <p class="item-desc">Tipo: Espada<br>Em uma mão traz 50% de desvantagem física. Fincada no chão (gasto 60+6*Lvl), cria área de 15m onde aliados recebem -30% de dano sofrido e +80% no dano total causado.</p>
+                            <p class="item-price">Preço: 200.000¥</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="system-card accordion-card">
+        <div class="system-header accordion-header" onclick="toggleAccordion(this)">
+            <h2 class="rpg-title">👑 ✦ 𝐈𝐓𝐄𝐍𝐒 - 𝐑𝐀𝐍𝐊 𝐒 👑</h2>
+            <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-content">
+            <div class="system-body">
+                <div class="shop-grid">
+                    
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/portador_tempestade.jpg" alt="Portador da Tempestade">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">⚔️ ✦ Portador da Tempestade</h4>
+                            <p class="item-desc">Tipo: Espada<br>Ataques de vento cobrem até 3 metros. Coberta com mana, cria tornado estilo broca que ignora 70% da vitalidade do alvo e o lança longe.</p>
+                            <p class="item-price">Preço: 300.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/leque_demonio_fogo.jpg" alt="Leque do Demônio de Fogo">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🪭 ✦ Leque do Demônio de Fogo</h4>
+                            <p class="item-desc">Tipo: Leque<br>Causa dano de fogo igual a 40% do dano máximo da magia. Ignora 60% da vitalidade do alvo, causa +40% contra escudos/barreiras e +50% contra alvos já sob habilidades de fogo.</p>
+                            <p class="item-price">Preço: 270.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/raposa_cauda_dourada.jpg" alt="Raposa de Cauda Dourada">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔱 ✦ Raposa de Cauda Dourada</h4>
+                            <p class="item-desc">Tipo: Lança<br>Transformadores ganham +10% em todos status por alvo acertado (máx +90%). Luz sagrada paralisa o membro atingido (-40% Agilidade, -20% Vitalidade por 6 turnos). Concede +70% de Vitalidade enquanto empunhada.</p>
+                            <p class="item-price">Preço: 240.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/cajado_divino.jpg" alt="Cajado Divino">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🪄 ✦ Cajado Divino</h4>
+                            <p class="item-desc">Tipo: Cajado<br>Armazena até 50% da mana para +50% no dano corpo a corpo. Concede +50% Vitalidade e domo protetor com 60% da vida máxima (duas mãos). Aumenta dano físico de aliados em +40% da sua força e a vitalidade deles em +50% da sua.</p>
+                            <p class="item-price">Preço: 280.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/abobora_assustadora.jpg" alt="Abóbora Assustadora">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🎃 ✦ Abóbora Assustadora</h4>
+                            <p class="item-desc">Tipo: Catalisador<br>Lança doces explosivos causando dano direto igual a 60% da sua vitalidade (-35% poder mágico ao lançar). Aumenta danos de vento em 40% e outros elementais em 20%. Aura de 2m reduz força e MP dos atacantes em 30%. Ignora 30% da vitalidade.</p>
+                            <p class="item-price">Preço: 250.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/adagas_rei_demonio.jpg" alt="Adagas do Rei Demônio">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🗡️ ✦ Adagas do Rei Demônio</h4>
+                            <p class="item-desc">Tipo: Adagas Gêmeas<br>Recebem a porcentagem bônus de força do usuário para seu próprio dano. Concedem +220 fixos de força incondicionais. Furar o alvo paralisa por 2 turnos. Dobram o dano do usuário, mas só aceitam buffs próprios.</p>
+                            <p class="item-price">Preço: 350.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/verdadeira_lanca_cavaleiro.jpg" alt="Verdadeira Lança do Cavaleiro Demônio">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔱 ✦ Verdadeira Lança do Cavaleiro Demônio</h4>
+                            <p class="item-desc">Tipo: Lança<br>+40% de luz sagrada nas magias (+80% contra demônios/mortos-vivos/espíritos). +65% Velocidade e +40% Força. Fúria do Cavaleiro Sagrado: arremessada, atinge os 5 seres de magia maligna mais próximos.</p>
+                            <p class="item-price">Preço: 290.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/fragmento_zeke.jpg" alt="Fragmento de Zeke">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">⚡ ✦ Fragmento de Zeke</h4>
+                            <p class="item-desc">Tipo: Lança<br>Arremessada por sombras, aumenta o dano em 80%, destrói barreiras e retorna à mão. Concede +50% Vitalidade e +80% Força. Ataque aéreo invoca raios negros causando (120+4Lvl) adicional (gasto 90+10Lvl).</p>
+                            <p class="item-price">Preço: 370.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/alma_fenix.jpg" alt="Alma da Fênix">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🏹 ✦ Alma da Fênix</h4>
+                            <p class="item-desc">Tipo: Arco<br>Disparos causam dano de fogo (MP + 120%) em explosão de 10m (cura aliados em 40% do dano). Queimadura causa 5k de dano/turno por 4 turnos ignorando vitalidade. Último tiro vira fênix causando 60% do dano sofrido ou curando aliado em 40% HP.</p>
+                            <p class="item-price">Preço: 370.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/skadi.jpg" alt="Skadi">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">❄️ ✦ Skadi</h4>
+                            <p class="item-desc">Tipo: Pistola<br>Gasta 15% de mana para 6 balas de gelo (-10% Vitalidade, Força e Agilidade por acerto). Gasta 45% de mana para bala congelante (-80% Vitalidade, -100% Agilidade por 3 turnos). Dobra efeito de magias de gelo e reduz dano de fogo inimigo em 70%.</p>
+                            <p class="item-price">Preço: 500.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_flor_ameixa.jpg" alt="Espada Demoníaca de Flor de Ameixa">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🌸 ✦ Espada Demoníaca de Flor de Ameixa</h4>
+                            <p class="item-desc">Tipo: Katana<br>+70% Agilidade ao atacar e +50% Força por aura demoníaca. Converte mana em pétalas lâminas (cada 500 MP = 1 pétala com 500 de dano, máx 20). Maldição da Pétala: divide o dano sofrido em dois, anulando metade e a outra ignorando vitalidade.</p>
+                            <p class="item-price">Preço: 410.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/sombras_lua.jpg" alt="Sombras da Lua">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🌙 ✦ Sombras da Lua</h4>
+                            <p class="item-desc">Tipo: Adaga<br>Ignora 65% de vitalidade. Fica invisível no escuro. Conjura explosão de luz removendo 80% dos sentidos e cega por 3 turnos. Golpe bônus no último ataque causando 75% do dano sem anulação por vitalidade.</p>
+                            <p class="item-price">Preço: 390.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/foice_sombras.jpg" alt="Foice das Sombras">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">☠️ ✦ Foice das Sombras</h4>
+                            <p class="item-desc">Tipo: Foice<br>Gasta 5% de HP para +100% no dano. Abaixo de 70% HP, buff sobe para 125%. Concede +40% Força/Velocidade e +55% Vitalidade. Abaixo de 60% HP, causa +35% de dano extra.</p>
+                            <p class="item-price">Preço: 470.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/o_cacador.jpg" alt="O Caçador">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔫 ✦ O Caçador</h4>
+                            <p class="item-desc">Tipo: Espingarda<br>Balas de luz (300 MP por tiro). Causa dano de luz igual a MP + 95%. Hora do Julgamento (600 MP): 2 tiros, um remove 70% dos sentidos e dá +70% dano ao segundo. Se a vitalidade for menor que o dano sofrido, o alvo é lançado longe.</p>
+                            <p class="item-price">Preço: 410.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/furia_vulcano.jpg" alt="Fúria de Vulcano">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🔥 ✦ Fúria de Vulcano</h4>
+                            <p class="item-desc">Tipo: Porrete<br>Queimadura de 75% do dano total por 3 turnos. Causa 40% do dano direto na vida. Escudo de chamas com 10% do dano causado. Pode concentrar em 1 ataque equivalente a 6 golpes com +80% de dano (sem queimadura/dano direto).</p>
+                            <p class="item-price">Preço: 370.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/grimorio_tethis.jpg" alt="Grimório de Tethis">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">📖 ✦ Grimório de Tethis</h4>
+                            <p class="item-desc">Tipo: Catalisador<br>Adiciona água como segundo elemento (+60% dano, prende em bolha por 2 turnos se exceder vitalidade). Mar da Desgraça (400+9Lvl): zona de 100m, dragão de água (MP + 95%). Afoga se >40% vida. Congela água do corpo prendendo por 1 turno. Anula 40% da vitalidade por 1 turno.</p>
+                            <p class="item-price">Preço: 470.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/espada_rei_demonio.jpg" alt="Espada Longa do Rei Demônio">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🗡️ ✦ Espada Longa do Rei Demônio</h4>
+                            <p class="item-desc">Tipo: Montante<br>Tempestade das Chamas Brancas: raio em 50m causa 60% do dano máximo (1x por cena). +95% no dano baseado na força. Escudo com vida igual a 50% do dano recebido + força, refletindo 30% do dano em raio corte.</p>
+                            <p class="item-price">Preço: 550.000¥</p>
+                        </div>
+                    </div>
+
+                    <div class="shop-item-card">
+                        <div class="shop-item-img">
+                            <img src="img/presa_kasaka_verdadeira.jpg" alt="Verdadeira Presa Venenosa de Kasaka">
+                        </div>
+                        <div class="shop-item-info">
+                            <h4 class="item-name">🐍 ✦ Verdadeira Presa Venenosa de Kasaka</h4>
+                            <p class="item-desc">Tipo: Adaga<br>Dano de 80% da Vitalidade do inimigo + 75%, ignorando vitalidade por danos internos (dura 3 turnos). Alvos sofrem espasmos reduzindo dano em 40% por 4 turnos. Impede cura por poções e healers abaixo de Rank S (Rank S/Nacional perdem 40% da cura).</p>
+                            <p class="item-price">Preço: 550.000¥</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>  
+
+        <section id="ajuda" class="page-section">
+            <div class="info-card">
+                <h1 class="rpg-title">🛡️ AJUDA</h1>
+                <p class="rpg-subtitle">📜 ✦ Central de Dúvidas e Suporte</p>
+                <p class="rpg-paragraph">Use esta área para resolver dúvidas rápidas, evitar erros comuns e saber exatamente como pedir ajuda para a staff.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">🚀 Começo Rápido</h2>
+                <p class="rpg-paragraph">1. Abra a aba Como Criar Ficha e monte seu personagem.</p>
+                <p class="rpg-paragraph">2. Aguarde a aprovação da staff antes de iniciar cenas oficiais.</p>
+                <p class="rpg-paragraph">3. Após aprovado, use Loja, Missões e Treinos para evoluir.</p>
+                <p class="rpg-paragraph">4. Atualize sua ficha e seu banco sempre que ganhar ou gastar money.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">❓ Dúvidas Frequentes</h2>
+                <p class="rpg-paragraph">Como ganho XP? Por treino, missão, interação e eventos.</p>
+                <p class="rpg-paragraph">Como compro item? Escolha na loja, copie a ficha do banco e envie no grupo da loja.</p>
+                <p class="rpg-paragraph">Posso mudar classe/rank? Somente quando houver regra específica e aprovação da staff.</p>
+                <p class="rpg-paragraph">Atributos com limite? Sim, Agilidade e Sentidos devem respeitar o limite definido nas regras.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">⚠️ Erros Comuns</h2>
+                <p class="rpg-paragraph">Não atualizar o banco após compra ou ganho de money.</p>
+                <p class="rpg-paragraph">Enviar treino/missão sem bater requisito mínimo de texto.</p>
+                <p class="rpg-paragraph">Ignorar limite semanal de treino e tentativa de farm fora da regra.</p>
+                <p class="rpg-paragraph">Esquecer de registrar item novo no inventário da ficha.</p>
+            </div>
+
+            <div class="info-card">
+                <h2 class="rpg-section-title">📩 Modelo de Pedido de Ajuda</h2>
+                <p class="rpg-paragraph">Nome do personagem:</p>
+                <p class="rpg-paragraph">Dúvida ou problema:</p>
+                <p class="rpg-paragraph">Print ou evidência:</p>
+                <p class="rpg-paragraph">Link da ficha:</p>
+                <p class="rpg-paragraph">O que você já tentou:</p>
+            </div>
+
+            <div class="info-card help-form-card">
+                <h2 class="rpg-section-title">✉️ Enviar Dúvida por Email</h2>
+                <p class="rpg-paragraph">Preencha seu email e escreva sua dúvida. A mensagem será enviada direto para a staff.</p>
+
+                <form class="help-form" action="https://formspree.io/f/xrpgyyjn" method="POST">
+                    <label for="help-email">Seu email</label>
+                    <input type="email" id="help-email" name="email" placeholder="seuemail@exemplo.com" required>
+
+                    <label for="help-message">Sua dúvida</label>
+                    <textarea id="help-message" name="message" rows="5" placeholder="Escreva sua dúvida aqui..." required></textarea>
+
+                    <button type="submit" class="help-send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Enviar dúvida
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="scroll-nav" aria-label="Navegação rápida">
+        <button class="scroll-btn" type="button" onclick="scrollPageByDirection('up')" aria-label="Subir">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+        <button class="scroll-btn" type="button" onclick="scrollPageByDirection('down')" aria-label="Descer">
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
