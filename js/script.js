@@ -68,13 +68,30 @@ function scrollPageByDirection(direction) {
 
 window.scrollPageByDirection = scrollPageByDirection;
 
-function copiarFichaBanco() {
-    const textoFicha = document.getElementById("ficha-banco-text");
-    textoFicha.select();
-    textoFicha.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(textoFicha.value);
-    alert("Ficha do Banco copiada com sucesso!");
+function copiarTexto(idElemento) {
+    const campoTexto = document.getElementById(idElemento);
+    if (!campoTexto) {
+        return;
+    }
+
+    campoTexto.select();
+    campoTexto.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(campoTexto.value);
 }
+
+window.copiarTexto = copiarTexto;
+
+function copiarFichaBanco() {
+    copiarTexto("ficha-banco-text");
+}
+
+window.copiarFichaBanco = copiarFichaBanco;
+
+function copiarFichaCompra() {
+    copiarTexto("ficha-compra-text");
+}
+
+window.copiarFichaCompra = copiarFichaCompra;
 
 function filtrarItensLoja() {
     const input = document.getElementById('shop-search-input');
