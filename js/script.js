@@ -57,7 +57,7 @@ function toggleAccordion(headerElement) {
 window.toggleAccordion = toggleAccordion;
 
 function scrollPageByDirection(direction) {
-    const delta = Math.round(window.innerHeight * 0.75);
+    const delta = Math.round(window.innerHeight * 1.2);
     const top = direction === 'up' ? -delta : delta;
 
     window.scrollBy({

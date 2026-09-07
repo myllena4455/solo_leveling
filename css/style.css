@@ -61,12 +61,14 @@ body {
     top: 0;
     left: -260px;
     width: 260px;
-    height: 100%;
+    height: 100vh;
+    max-height: 100vh;
     background-color: #1A0033;
     z-index: 100;
     transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidebar.active {
@@ -620,8 +622,8 @@ body {
 }
 
 .scroll-btn {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 999px;
     border: 1px solid rgba(30, 144, 255, 0.5);
     background: rgba(3, 3, 26, 0.76);
@@ -632,6 +634,27 @@ body {
     cursor: pointer;
     backdrop-filter: blur(2px);
     transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.site-footer {
+    background: #03031A;
+    border-top: 1px solid rgba(30, 144, 255, 0.5);
+    color: #dfeeff;
+    text-align: center;
+    padding: 18px 20px 22px;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-top: 24px;
+}
+
+.site-footer a {
+    color: #7bc4ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 .scroll-btn:hover {
@@ -654,7 +677,16 @@ body {
         height: 110px;
     }
     .scroll-nav {
-        right: 10px;
-        bottom: 12px;
+        right: 8px;
+        bottom: 10px;
+        gap: 6px;
+        opacity: 0.9;
+    }
+    .scroll-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        border-radius: 10px;
+        background: rgba(3, 3, 26, 0.7);
     }
 }
